@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity2"
+    android:background="@drawable/back07">
+
+
+
+
+    <TextView
+        android:layout_width="256dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="3dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="7dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text="Update profile"
+        android:textAlignment="center"
+        android:textColor="#F8F0F0"
+        android:textSize="31dp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/fn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rb"
+        android:backgroundTint="#DFDBDB"
+        android:ems="10"
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text=""
+        android:textColor="#393737"
+        android:textColorHighlight="#F8F0F0"
+        android:textColorHint="#150303"
+        android:textColorLink="#F1ECEC" />
+
+    <EditText
+        android:id="@+id/ln"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rb"
+        android:backgroundTint="#E3DADA"
+        android:ems="10"
+        android:layout_marginTop="7dp"
+        android:hint="Last Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="8dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text=""
+        android:textColor="#393737"
+        android:textColorHint="#150303" />
+
+
+    <EditText
+        android:id="@+id/ads"
+        android:layout_width="298dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/rb"
+        android:backgroundTint="#E3DADA"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="8dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text=""
+        android:textColor="#393737"
+        android:textColorHint="#150303" />
+
+
+    <RadioGroup
+        android:layout_width="243dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/rb"
+        android:backgroundTint="#E4D9D9"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp">
+
+        <RadioButton
+
+            android:id="@+id/rb1"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+
+            android:backgroundTint="#CDC3C3"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+
+            android:text="Female" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/round_border"
+        android:backgroundTint="#E3DADA"
+        android:ems="10"
+        android:hint="phone"
+        android:inputType="phone"
+        android:paddingLeft="20dp"
+        android:paddingTop="8dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#393737"
+        android:textColorHint="#150303" />
+
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_border"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#E3DADA"
+        android:ems="10"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="20dp"
+        android:paddingTop="8dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#393737"
+        android:textColorHint="#150303" />
+
+    <Button
+        android:id="@+id/regs"
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/round_border"
+
+        android:text="Update"
+        android:textAlignment="center"
+        android:textSize="18dp" />
+
+
+</LinearLayout>
