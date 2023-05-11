@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -17,11 +18,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="92dp"
-            android:layout_height="46dp"
-            android:text="Bid 365" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="82dp"
+            android:background="#171616"
+            android:backgroundTint="#121111"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="160dp"
+                android:layout_height="42dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@null"
+                android:backgroundTint="#0091EA"
+                android:text="All auctions"
+                android:textColor="@android:color/white"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/btn_skip"
+                android:layout_width="160dp"
+                android:layout_height="42dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="30dp"
+                android:background="@null"
+                android:backgroundTint="#0091EA"
+                android:text="Registerd"
+                android:textColor="@android:color/white"
+                android:textStyle="italic" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp">
+
+            <ListView
+                android:id="@+id/lv1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableRow>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/layoutDots"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dots_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dots_margin_bottom"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha=".5"
+            android:layout_above="@id/layoutDots"
+            android:background="@android:color/white" />
+
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

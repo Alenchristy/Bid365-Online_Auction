@@ -6,36 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/back09">
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="391dp"
-        android:layout_height="47dp"
-        android:background="#F3EDED"
-        android:backgroundTint="#F4EFEF"
-        android:gravity="center"
-        android:text="Bid 365"
-        android:textAlignment="center"
-        android:textColor="#C767E10B"
-        android:textSize="29dp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="31dp"
-        android:layout_height="29dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.307"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04"
-        app:srcCompat="@drawable/auction" />
+    android:background="@color/blue">
 
     <FrameLayout
         android:id="@+id/flFragment"
@@ -48,17 +19,32 @@
         app:layout_constraintTop_toTopOf="parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="134dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    app:srcCompat="@drawable/profile" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
 
                 <ListView
                     android:id="@+id/list1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="120dp"
                     android:layout_marginLeft="10dp"/>
             </TableRow>
         </LinearLayout>

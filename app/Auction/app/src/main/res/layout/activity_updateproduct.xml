@@ -106,12 +106,12 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567" />
+        app:layout_constraintVertical_bias="0.572" />
 
     <EditText
         android:id="@+id/details1"
-        android:layout_width="305dp"
-        android:layout_height="87dp"
+        android:layout_width="288dp"
+        android:layout_height="95dp"
         android:background="@drawable/rb"
         android:backgroundTint="#E1D5D5"
         android:ems="10"
@@ -130,47 +130,49 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.34" />
 
-    <EditText
+    <TextView
         android:id="@+id/date2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="244dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rb"
         android:backgroundTint="#E1D5D5"
+        android:drawableStart="@drawable/calender"
         android:ems="10"
-        android:hint="Enter auction date"
-        android:inputType="date"
-        android:paddingLeft="20dp"
+        android:padding="12dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:textColorHint="#655F5F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
+        android:drawablePadding="16dp"
 
-    <EditText
+        android:textColor="@color/black"
+        android:textColorHint="#655F5F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.664" />
+
+    <TextView
         android:id="@+id/tim1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="240dp"
+        android:layout_height="44dp"
         android:background="@drawable/rb"
         android:backgroundTint="#E1D5D5"
+        android:drawableStart="@drawable/time"
+        android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="Enter auction time"
-        android:inputType="time"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:textColorHint="#655F5F"
+
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751" />
+        app:layout_constraintVertical_bias="0.756" />
 
     <Button
         android:id="@+id/bt2"
@@ -202,7 +204,7 @@
         android:layout_width="151dp"
         android:layout_height="24dp"
         android:text="Update Product"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textAlignment="center"
         android:gravity="center"

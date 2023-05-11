@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back09"
+    tools:context=".aboutus">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="383dp"
+        android:layout_height="57dp"
+        android:background="#F3EDED"
+        android:backgroundTint="#F4EFEF"
+        android:gravity="center"
+        android:text="Bid 365"
+        android:textAlignment="center"
+        android:textColor="#C767E10B"
+        android:textSize="29dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="31dp"
+        android:layout_height="29dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064"
+        app:srcCompat="@drawable/auction" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="338dp"
+        android:layout_height="439dp"
+        android:background="@drawable/rb"
+        android:backgroundTint="#DFD8D8"
+
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:textSize="17dp"
+        android:text="Bid 365 is an online auction system is a web-based platform that enables individuals and businesses to conduct auctions over the internet. It provides a virtual marketplace where sellers can list items for sale, and buyers can bid on those items from anywhere in the world, using any internet-enabled device. Online auction systems usually operate on a predetermined time frame, with bidding periods and end times set by the seller."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501" />
+</androidx.constraintlayout.widget.ConstraintLayout>

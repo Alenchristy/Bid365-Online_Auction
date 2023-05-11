@@ -12,13 +12,15 @@
         android:id="@+id/b1"
         android:layout_width="111dp"
         android:layout_height="48dp"
+        android:background="@drawable/rb"
         android:text="Browse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79" />
+        app:layout_constraintVertical_bias="0.898" />
+
 
     <EditText
         android:id="@+id/pnam"
@@ -26,9 +28,12 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rb"
         android:backgroundTint="#E1D5D5"
+        android:drawableStart="@drawable/mode"
+        android:drawablePadding="14dp"
         android:ems="10"
         android:hint="enter product name"
         android:inputType="textPersonName"
+        android:padding="12dp"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -40,7 +45,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128" />
+        app:layout_constraintVertical_bias="0.084" />
 
     <EditText
         android:id="@+id/img"
@@ -59,19 +64,21 @@
         android:textColorHint="#7E7575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.301"
+        app:layout_constraintHorizontal_bias="0.349"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791" />
+        app:layout_constraintVertical_bias="0.914" />
 
     <EditText
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rb"
         android:backgroundTint="#E1D5D5"
+        android:drawableStart="@drawable/rupe1"
         android:ems="10"
-        android:hint="enter product price"
+        android:hint="enter bid price"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -84,14 +91,40 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.468" />
+
+    <EditText
+        android:id="@+id/price2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rb"
+        android:backgroundTint="#E1D5D5"
+        android:drawableStart="@drawable/rupe1"
+        android:ems="10"
+        android:hint="enter reserve price"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text=""
+        android:textColorHint="#655F5F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.552" />
 
     <EditText
         android:id="@+id/place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rb"
         android:backgroundTint="#E1D5D5"
+        android:drawableStart="@drawable/location"
         android:ems="10"
         android:hint="enter product place"
         android:inputType="textPersonName"
@@ -106,14 +139,16 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.652" />
 
     <EditText
         android:id="@+id/details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="285dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rb"
         android:backgroundTint="#E1D5D5"
+        android:drawableStart="@drawable/dtl"
         android:ems="10"
         android:gravity="start|top"
         android:hint="enter details"
@@ -125,93 +160,99 @@
         android:textColorHint="#655F5F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintVertical_bias="0.283" />
 
-    <EditText
+    <TextView
         android:id="@+id/date1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="244dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rb"
         android:backgroundTint="#E1D5D5"
+        android:drawableStart="@drawable/calender"
+        android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="Enter auction date"
-        android:inputType="date"
-        android:paddingLeft="20dp"
+        android:hint="enter auction date"
+        android:padding="12dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
+        android:textColor="@color/black"
         android:textColorHint="#655F5F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintVertical_bias="0.738" />
 
-    <EditText
+    <TextView
         android:id="@+id/tim"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="240dp"
+        android:layout_height="44dp"
         android:background="@drawable/rb"
         android:backgroundTint="#E1D5D5"
+        android:drawableStart="@drawable/time"
+        android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="Enter auction time"
-        android:inputType="time"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:textColorHint="#655F5F"
+        android:hint="enter auction time"
+
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintVertical_bias="0.829" />
 
     <Button
         android:id="@+id/b2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@drawable/rb"
         android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintVertical_bias="0.977" />
 
     <Spinner
         android:id="@+id/s"
         android:layout_width="242dp"
         android:layout_height="49dp"
-        android:backgroundTint="#F3EDED"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rb"
+        android:backgroundTint="@color/purple_200"
+
+        android:padding="12dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintVertical_bias="0.156" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="151dp"
         android:layout_height="24dp"
-        android:text="Add Product"
-        android:textColor="@color/primaryTextColor"
-        android:textSize="20dp"
-        android:textAlignment="center"
         android:gravity="center"
+        android:text="Add Product"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
         android:textStyle="italic|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.022" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

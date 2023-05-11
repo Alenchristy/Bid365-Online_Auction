@@ -117,11 +117,18 @@ public class MainActivity2 extends AppCompatActivity {
                 else if (username.equalsIgnoreCase("")) {
                     usr.setError("enter your  username");
                 }
-                else  if (password.equalsIgnoreCase("")) {
-                    pas.setError("enter your  password");
+
+                else if (username.length() <= 4) {
+                    usr.setError(" Length too short at least 5 characters");
                 }
                 else if (!username.matches("^[a-z]*$")) {
                     usr.setError(" characters  allowed");
+                }
+                else  if (password.equalsIgnoreCase("")) {
+                    pas.setError("enter your  password");
+                }
+                else  if (password.length() <= 5) {
+                    pas.setError("too short min 6 characters");
                 }
                 else {
 

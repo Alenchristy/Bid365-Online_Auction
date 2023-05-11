@@ -54,7 +54,7 @@ table caption {
 table.dataTable th
 {
   align: center;
-  background-color: black;
+  background-color: blue;
   color: #fff;
 }
 table.dataTable td {
@@ -94,9 +94,10 @@ transform: scale(3.5);
             <th><p align="center"> Place </p></th>
             <th><p align="center"> Image </p></th>
             <th><p align="center"> seller name </p></th>
-            <th><p align="center"> date </p></th>
-            <th><p align="center"> time </p></th>
-            <th><p align="center"> options </p></th>
+            <th><p align="center"> Date </p></th>
+            <th><p align="center"> Time </p></th>
+            <th><p align="center"> Category </p></th>
+            <th><p align="center"> Options </p></th>
 
 
 
@@ -112,6 +113,7 @@ transform: scale(3.5);
         <td align="center">{{i.user.firstname}} </td>
         <td align="center">{{i.date}}</td>
         <td align="center">{{i.time}}</td>
+        <td align="center">{{i.catg.category_nam}}</td>
         <td align="center"><a href="{% url 'removepro' id=i.id %}" class="btn btn-warning btn-sm">REMOVE</td>
 
 

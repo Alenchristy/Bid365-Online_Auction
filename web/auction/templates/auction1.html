@@ -1,0 +1,244 @@
+{% extends 'homepage.html' %}
+{% block body %}
+
+
+
+
+
+
+
+<head>
+  <title> Bootstrap 4 datatable example </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"> </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"> </script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"> </script>
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+</head>
+<style>
+body {
+  margin: 3;
+  min-height: 100vh;
+  padding: 0;
+  background-color: var(--clr-light);
+  color: var(--clr-black);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.125rem;
+  justify-content: center;
+  align-items: center;
+
+}
+
+h2 {
+font-family: 'Indie Flower', cursive;
+font-size: 32px;
+  color: #03A9F4;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+}
+
+table caption {
+    padding: .5em 0;
+}
+
+table.dataTable th
+{
+  align: center;
+  background-color: blue;
+  color: #fff;
+}
+table.dataTable td {
+  background-color: #fff;
+}
+
+.p {
+  text-align: center;
+  padding-top: 140px;
+  font-size: 14px;
+}
+
+button{
+  width: 50dp;
+}
+
+img{
+  transition: 3s;
+}
+
+img:hover{
+transform: scale(3.5);
+}
+</style>
+<br>
+<body>
+  {% comment %} <div >
+    <a href="{% url 'auction2' %}" >Live Auctions</a>  <a href="{% url 'auction1' %}">Completed Auctions</a>
+    </div> {% endcomment %}
+<!-- <h2><i>Completed Auctions</i></h2>
+<br>
+<div align="center">
+  <label for="name">Start Date:</label>
+  <input type="date" id="sdate" name="sdate"> 
+
+  <label for="name">End Date:</label>
+  <input type="date" id="edate" name="edate"> 
+</div>
+
+<div align="center">
+  <button type="button" class="btn btn-warning btn-sm" onclick="searchTable()">GET</button>
+</div>
+<br> -->
+
+
+<div class="card p-5">
+  
+      <br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <table  id="table_id" class="table table-bordered table-hover dt-responsive">
+        <h2><i>Completed Auctions</i></h2>
+<br>
+<div align="center">
+  <label for="name">Start Date:</label>
+  <input type="date" id="sdate" name="sdate"> 
+
+  <label for="name">End Date:</label>
+  <input type="date" id="edate" name="edate"> 
+</div>
+
+<div align="center">
+  <button type="button" class="btn btn-warning btn-sm" onclick="searchTable()">GET</button>
+</div>
+<br>
+        <thead>
+          <tr>
+            <th><p align="center"> Product </p></th>
+            <th><p align="center"> Start Price </p></th>
+            <th><p align="center"> Reserve </p></th>
+            <th><p align="center"> Bid Price </p></th>
+            <th><p align="center"> Status </p></th>
+            <th><p align="center"> Winner </p></th>
+            <th><p align="center"> Auction Date </p></th>
+            <th><p align="center"> Profit </p></th>
+            
+
+
+          </tr>
+        </thead>
+        <tbody id="my-table">
+        {% for i in val %}
+        <tr >
+        <td align="center">{{i.0}}</td>
+        <td align="center">{{i.1}}</td>
+        <td align="center">{{i.2}}</td>
+        <td align="center">{{i.3}}</td>
+        <td align="center">
+          {% if i.5 == 'canceld' %}
+          <p style="color: red; font-weight: bold;">Canceled</p> 
+          {% else %}
+          
+          <p style="color: green; font-weight: bold;">Sold</p> 
+          {% endif %}
+        </td>
+        <td align="center">
+          {% if i.5 == 'canceld' %}
+          <p style="color: red; font-weight: bold;">None</p> 
+          {% else %}
+          <p style="color: green; font-weight: bold;">{{i.4}}</p>
+          {% endif %}
+          
+        </td>
+        <td align="center">{{i.6}}</td>
+        <td align="center">
+          {% if i.5 == 'canceld' %}
+          <p style="color: red; font-weight: bold;">None</p>
+          {% else %}
+          <p style="color: green; font-weight: bold;">{{i.7}}</p>
+          
+          {% endif %}
+        </td>
+
+
+        
+      </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+
+
+function searchTable() {
+  var sdate = new Date(document.getElementById('sdate').value);
+  var edate = new Date(document.getElementById('edate').value);
+  var table = document.getElementById('my-table');
+  var rows = table.getElementsByTagName('tr');
+  console.log(rows);
+
+  for (var i = 0; i < rows.length; i++) {
+    var row = rows[i];
+    console.log(row,"*************************");
+    var cells = row.getElementsByTagName('td');
+    console.log(cells);
+    if (cells.length > 0) {
+      var date = new Date(cells[6].textContent);
+      console.log(date,"#################################");
+      if (date <= sdate || date >= edate) {
+        row.style.display = 'none';
+      } else {
+        row.style.display = '';
+      }
+    }
+  }
+}
+
+
+const startDateInput = document.getElementById('sdate');
+const endDateInput = document.getElementById('edate');
+
+// Listen for changes to the start date field
+startDateInput.addEventListener('input', () => {
+  const startDate = new Date(startDateInput.value);
+  const endDate = new Date(endDateInput.value);
+
+  // If the end date is before the start date, set it to the start date
+  if (endDate < startDate) {
+    endDateInput.value = startDateInput.value;
+  }
+});
+
+// Listen for changes to the end date field
+endDateInput.addEventListener('input', () => {
+  const startDate = new Date(startDateInput.value);
+  const endDate = new Date(endDateInput.value);
+
+  // If the end date is before the start date, set it to the start date
+  if (endDate < startDate) {
+    endDateInput.value = startDateInput.value;
+  }
+});
+
+
+</script>
+
+
+</body>
+
+
+
+
+
+{% endblock %}
+

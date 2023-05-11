@@ -28,7 +28,7 @@ public class viewcatproduct extends AppCompatActivity {
     GridView gw;
     String url,url1;
 
-    ArrayList<String> pro,img,price,pid,status;
+    ArrayList<String> pro,img,price,pid,status,loc;
     SharedPreferences sh;
 
     @Override
@@ -56,6 +56,7 @@ public class viewcatproduct extends AppCompatActivity {
                     pro= new ArrayList<>();
                     price= new ArrayList<>();
                     img=new ArrayList<>();
+                    loc=new ArrayList<>();
                     pid=new ArrayList<>();
                     status=new ArrayList<>();
 
@@ -69,6 +70,7 @@ public class viewcatproduct extends AppCompatActivity {
                         pro.add(jo.getString("pname"));
                         price.add(jo.getString("price"));
                         img.add(jo.getString("img"));
+                        loc.add(jo.getString("loc"));
                         pid.add(jo.getString("id"));
                         status.add(jo.getString("status"));
 
@@ -86,7 +88,7 @@ public class viewcatproduct extends AppCompatActivity {
 //                    ls.setDividerHeight(0);
 //                    ls.setHorizontalScrollBarEnabled(false);
 
-                    gw.setAdapter(new customproduct(viewcatproduct.this,img,pro,price,status,pid));
+                    gw.setAdapter(new customproduct(viewcatproduct.this,img,pro,price,status,loc,pid));
 //                    ls.setOnItemClickListener(userhome.this);
 
                 } catch (Exception e) {

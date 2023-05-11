@@ -36,7 +36,7 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
     GridView gw;
     String url,url1;
     SearchView sv1;
-    ArrayList<String>pro,img,price,pid,cid,cimg,cname,status;
+    ArrayList<String>pro,img,price,pid,cid,cimg,cname,status,loc;
     SharedPreferences sh;
 
     BottomNavigationView bottomNavigationView;
@@ -52,8 +52,6 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnNavigationItemSelectedListener(userhome.this);
-
-
         sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
 //        url1 ="http://"+sh.getString("ip", "") + ":5000/search_view";
@@ -80,6 +78,7 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
                     cimg=new ArrayList<>();
                     cname=new ArrayList<>();
                     status=new ArrayList<>();
+                    loc=new ArrayList<>();
 
 
                     for(int i=0;i<ar.length();i++)
@@ -89,6 +88,7 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
                         pro.add(jo.getString("pname"));
                         price.add(jo.getString("price"));
                         img.add(jo.getString("img"));
+                        loc.add(jo.getString("loc"));
                         pid.add(jo.getString("id"));
                         status.add(jo.getString("status"));
 
@@ -103,9 +103,6 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
                         cname.add(jo.getString("c_name"));
                         cimg.add(jo.getString("img"));
 
-
-
-
                     }
 
                     // ArrayAdapter<String> ad=new ArrayAdapter<>(Home.this,android.R.layout.simple_list_item_1,name);
@@ -117,7 +114,7 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
 //                    ls.setDividerHeight(0);
 //                    ls.setHorizontalScrollBarEnabled(false);
 
-                    gw.setAdapter(new customproduct(userhome.this,img,pro,price,status,pid));
+                    gw.setAdapter(new customproduct(userhome.this,img,pro,price,status,loc,pid));
 //                    ls.setOnItemClickListener(userhome.this);
 
                 } catch (Exception e) {
@@ -137,7 +134,6 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-
                 params.put("lid",sh.getString("lid",""));
 
                 return params;
@@ -162,7 +158,7 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
 
             case R.id.sell:
 //                bottomNavigationView.setSelectedItemId(R.id.sell);
-                Intent k = new Intent(getApplicationContext(),sell.class);
+                Intent k = new Intent(getApplicationContext(),adproducts.class);
                 startActivity(k);
                 return true;
 
@@ -210,6 +206,7 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
                     pro= new ArrayList<>();
                     price= new ArrayList<>();
                     img=new ArrayList<>();
+                    loc=new ArrayList<>();
                     pid=new ArrayList<>();
                     status=new ArrayList<>();
 
@@ -223,6 +220,7 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
                         price.add(jo.getString("price"));
                         img.add(jo.getString("img"));
                         pid.add(jo.getString("id"));
+                        loc.add(jo.getString("loc"));
                         status.add(jo.getString("status"));
 
 
@@ -233,7 +231,7 @@ public class userhome extends AppCompatActivity implements BottomNavigationView.
                     // ArrayAdapter<String> ad=new ArrayAdapter<>(Home.this,android.R.layout.simple_list_item_1,name);
                     //lv.setAdapter(ad);
 
-                    gw.setAdapter(new customproduct(userhome.this,img,pro,price,status,pid));
+                    gw.setAdapter(new customproduct(userhome.this,img,pro,price,status,loc,pid));
 //                    ls.setOnItemClickListener(userhome.this);
 
                 } catch (Exception e) {

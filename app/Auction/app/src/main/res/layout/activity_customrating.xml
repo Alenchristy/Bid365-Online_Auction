@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".custom_auction">
+
+    <TableRow
+        android:layout_width="346dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginRight="24dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+
+            android:background="#00FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            app:cardCornerRadius="10dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/nm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="29dp"
+                        android:text="name"
+                        android:textStyle="italic|bold"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:text="Verified Buyer"
+                        android:textColor="@color/blue"
+                        android:drawableStart="@drawable/vu"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    >
+
+                    <RatingBar
+                        android:id="@+id/rt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:disabledAlpha="1"
+                        android:enabled="false"
+                        android:progressBackgroundTint="@android:color/darker_gray"
+                        android:progressTint="@color/yellow"
+                        android:scaleX="0.8"
+                        android:scaleY="0.8"
+                        android:secondaryProgressTint="@android:color/white" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@color/white"
+                        android:backgroundTint="#E3E1E1"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginBottom="8dp">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:layout_marginBottom="3dp">
+
+                                <TextView
+                                    android:id="@+id/rw"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="9dp"
+                                    android:paddingRight="5dp"
+                                    android:paddingBottom="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:text=""
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+
+                            </LinearLayout>
+
+
+                        </ScrollView>
+                    </androidx.cardview.widget.CardView>
+                </TableRow>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </TableRow>
+
+</LinearLayout>

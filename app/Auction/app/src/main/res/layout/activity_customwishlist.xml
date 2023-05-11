@@ -51,7 +51,7 @@
                 android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/im"
                     android:layout_marginTop="8dp"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -68,7 +68,7 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/prnam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView" />
@@ -88,7 +88,7 @@
                     android:background="@drawable/rupee" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/stprice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 

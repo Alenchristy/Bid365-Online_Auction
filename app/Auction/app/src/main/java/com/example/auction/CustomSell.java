@@ -95,11 +95,15 @@ public class CustomSell extends BaseAdapter {
             gridView=(View)convertview;
 
         }
-        TextView tv1=(TextView)gridView.findViewById(R.id.textView3);
-        ImageView i1=(ImageView) gridView.findViewById(R.id.imageView2);
-        TextView tv2=(TextView)gridView.findViewById(R.id.textView4);
+        TextView tv1=(TextView)gridView.findViewById(R.id.prnam);
+        ImageView i1=(ImageView) gridView.findViewById(R.id.im);
+        TextView tv2=(TextView)gridView.findViewById(R.id.stprice);
         TextView tv3=(TextView)gridView.findViewById(R.id.textView6);
         TextView tv4=(TextView)gridView.findViewById(R.id.textView7);
+        TextView tv5=(TextView)gridView.findViewById(R.id.vdoubt);
+
+
+
 
         tv3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +115,17 @@ public class CustomSell extends BaseAdapter {
 
             }
         });
+
+        tv5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent id = new Intent(context,doubts.class);
+                id.putExtra("pid", d.get(position));
+                context.startActivity(id);
+            }
+        });
+
+
         tv4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,8 +184,6 @@ public class CustomSell extends BaseAdapter {
                                         protected Map<String, String> getParams() {
                                             Map<String, String> params = new HashMap<String, String>();
                                             params.put("pid", d.get(position));
-
-
                                             return params;
                                         }
                                     };

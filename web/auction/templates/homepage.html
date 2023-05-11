@@ -1324,50 +1324,72 @@
 
       <li class="nav-item mt-5">
         
-        <a /style="background-color:black;" class="nav-link " href="{% url 'hom1' %}">
+        <a  class="nav-link " href="{% url 'hom1' %}">
           <i class="bi bi-grid"></i>
           <span>DASHBOARD</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item mt-3">
-        <a /style="background-color:black;" class="nav-link " href="{% url 'cat' %}">
+        <a  class="nav-link " href="{% url 'cat' %}">
+          <i class="bi bi-columns-gap"></i>
           {% comment %} <i class='bx bxs-car'></i> {% endcomment %}
           <span>CATEGORY</span>
         </a>
       </li>
 
       <li class="nav-item mt-3">
-        <a  /style="background-color:black;"class="nav-link " href="{% url 'viewpro' %}">
+        <a  class="nav-link " href="{% url 'viewpro' %}">
+          <i class="bi bi-boxes"></i>
           {% comment %} <i class="bi bi-person-fill"></i> {% endcomment %}
-          <span>PRODUCTS</span>
+          <span>ALL PRODUCTS</span>
         </a>
       </li>
 
       <li class="nav-item mt-3">
-        <a /style="background-color:black;" class="nav-link " href="{% url 'viewuser' %}">
-          {% comment %} <i class="bi bi-journal-medical"></i> {% endcomment %}
+        <a / class="nav-link " href="{% url 'viewuser' %}">
+          <i class="bi bi-people-fill"></i>
           <span>ALL USERS</span>
         </a>
       </li>
+
       <li class="nav-item mt-3">
-        <a /style="background-color:black;" class="nav-link " href="">
+        <a  class="nav-link " href="{% url 'auction1' %}">
+          <i class="bi bi-hammer"></i>
           {% comment %} <i class="bi bi-people-fill"></i> {% endcomment %}
           <span>AUCTIONS</span>
         </a>
       </li>
+
       <li class="nav-item mt-3">
-        <a /style="background-color:black;" class="nav-link " href="">
+        <a  class="nav-link " href="{% url 'earnings' %}">
+          <i class="bi bi-cash-coin"></i>
           {% comment %} <i class="bi bi-chat-left-fill"></i> {% endcomment %}
-          <span>FEEDBACK</span>
+          <span>MY EARNINGS</span>
         </a>
       </li>
+
       <li class="nav-item mt-3">
-        <a /style="background-color:black;" class="nav-link " href="/">
-          {% comment %} <i class="bi bi-box-arrow-right"></i> {% endcomment %}
+        <a  class="nav-link " href="{% url 'feed' %}">
+          <i class="bi bi-journals"></i>
+          {% comment %} <i class="bi bi-chat-left-fill"></i> {% endcomment %}
+          <span>FEEDBACKS</span>
+        </a>
+      </li>
+
+      {% comment %} <li class="nav-item mt-3">
+        <a  class="nav-link " href="/">
+          <i class="bi bi-box-arrow-left"></i>
           <span>LOGOUT</span>
         </a>
-      </li>
+      </li> {% endcomment %}
+
+      {% comment %} <li class="nav-item mt-3">
+        <a /style="background-color:black;" class="nav-link " href="{% url 'contract' %}">
+          
+          <span>AUCTIONS</span>
+        </a>
+      </li> {% endcomment %}
 
 
     </ul>

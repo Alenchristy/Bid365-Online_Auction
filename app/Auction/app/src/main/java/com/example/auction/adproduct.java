@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -64,8 +65,12 @@ public class adproduct extends AppCompatActivity implements AdapterView.OnItemSe
     String fileName = "", path = "";
     private static final int FILE_SELECT_CODE = 0;
     Button bt, bt1;
-    EditText name, details, price, place, dateee, tm, image;
-    String nam, dtls, prc, plc, tim, dat, im;
+
+    EditText name, details, price, rprice, place, image;
+
+    TextView dateee,tm;
+
+    String nam, dtls, prc,rprc, plc, tim, dat, im;
     String eeid;
     final Calendar myCalendar= Calendar.getInstance();
     DatePickerDialog.OnDateSetListener setListener;
@@ -83,13 +88,16 @@ public class adproduct extends AppCompatActivity implements AdapterView.OnItemSe
         name = findViewById(R.id.pnam);
         image = findViewById(R.id.img);
         price = findViewById(R.id.price);
+        rprice = findViewById(R.id.price2);
         place = findViewById(R.id.place);
 
         details = findViewById(R.id.details);
+
         tm = findViewById(R.id.tim);
+
         bt = findViewById(R.id.b1);
         bt1 = findViewById(R.id.b2);
-        dateee = (EditText) findViewById(R.id.date1);
+        dateee = findViewById(R.id.date1);
 
 
 
@@ -122,9 +130,9 @@ public class adproduct extends AppCompatActivity implements AdapterView.OnItemSe
         tm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Calendar c = Calendar.getInstance();
-                hour = c.get(Calendar.HOUR_OF_DAY);
-                minute = c.get(Calendar.MINUTE);
+                final Calendar calendar = Calendar.getInstance();
+                int hour = calendar.get(Calendar.HOUR_OF_DAY);
+                int minute = calendar.get(Calendar.MINUTE);
 
                 int limitHourStart = 8;
                 int limitMinuteStart = 0;
@@ -134,14 +142,27 @@ public class adproduct extends AppCompatActivity implements AdapterView.OnItemSe
                 TimePickerDialog timePickerDialog = new TimePickerDialog(adproduct.this,
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
-                            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                                hour = selectedHour;
-                                minute = selectedMinute;
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                                Toast.makeText(adproduct.this, "Selected time is " + hour + ":" + minute, Toast.LENGTH_SHORT).show();
-                                tm.setText(String.format("%d:%d", hour, minute));
+                                String am_pm = "";
+                                int hour = hourOfDay;
+                                if(hour >= 12) {
+                                    hour = hour - 12;
+                                    am_pm = "PM";
+                                } else {
+                                    am_pm = "AM";
+                                }
+                                if(hour == 0) {
+                                    hour = 12;
+                                }
+
+                                String formattedTime = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute, am_pm);
+                                tm.setText(formattedTime);
+
+
+//                                tm.setText(String.format("%d:%d", hour, minute, am_pm));
                             }
-                        }, hour, minute, true);
+                        }, hour, minute, false);
                 timePickerDialog.show();
             }
         });
@@ -221,6 +242,7 @@ public class adproduct extends AppCompatActivity implements AdapterView.OnItemSe
                 dat = dateee.getText().toString();
                 tim = tm.getText().toString();
                 prc = price.getText().toString();
+                rprc = rprice.getText().toString();
 
                 if (nam.equalsIgnoreCase("")) {
                     name.setError("Enter product name");
@@ -235,7 +257,10 @@ public class adproduct extends AppCompatActivity implements AdapterView.OnItemSe
                     price.setError("Enter price");
                 }
                 else if (!prc.matches("^[0-9]*$")) {
-                    price.setError("characters only allowed");
+                    price.setError("Numbers only allowed");
+                }
+                else if (!rprc.matches("^[0-9]*$")) {
+                    rprice.setError("Numbers only allowed");
                 }
                 else if (plc.equalsIgnoreCase("")) {
                     place.setError("Enter place");
@@ -246,9 +271,7 @@ public class adproduct extends AppCompatActivity implements AdapterView.OnItemSe
                 else if (dat.equalsIgnoreCase("")) {
                     dateee.setError("Enter date");
                 }
-//                else if (!dat.matches("^[2023/03/0-31]*$")) {
-//                    dateee.setError("date format YY/MM/DD insert future dates");
-//                }
+
                 else if (tim.equalsIgnoreCase("")) {
                     tm.setError("Enter time");
                 }
@@ -286,9 +309,11 @@ public class adproduct extends AppCompatActivity implements AdapterView.OnItemSe
 //                        Toast.makeText(Upload_agreement.this, "Report Sent Successfully", Toast.LENGTH_LONG).show();
                             if (obj.getString("task").equalsIgnoreCase("success")) {
 
-                                Toast.makeText(adproduct.this, "Successfully uploaded", Toast.LENGTH_LONG).show();
-                                Intent i = new Intent(getApplicationContext(), adproduct.class);
+//                                Toast.makeText(adproduct.this, "Successfully uploaded", Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(getApplicationContext(), payment.class);
+                                i.putExtra("pname", nam);
                                 startActivity(i);
+                                Toast.makeText(adproduct.this, nam, Toast.LENGTH_LONG).show();
                             } else {
                                 Toast.makeText(getApplicationContext(), "failed", Toast.LENGTH_LONG).show();
                             }
@@ -315,6 +340,8 @@ public class adproduct extends AppCompatActivity implements AdapterView.OnItemSe
                 params.put("detail", dtls);
                 params.put("place", plc);
                 params.put("price", prc);
+                params.put("rp", rprc);
+
                 params.put("date", dat);
                 params.put("time", tim);
                 params.put("lid", sh.getString("lid", ""));

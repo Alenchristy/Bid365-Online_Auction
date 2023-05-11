@@ -2,9 +2,7 @@ package com.example.auction;
 
 
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -22,19 +20,7 @@ import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class customcat extends BaseAdapter {
     private Context context;
@@ -96,8 +82,8 @@ public class customcat extends BaseAdapter {
             gridView=(View)convertview;
 
         }
-        TextView tv1=(TextView)gridView.findViewById(R.id.textView4);
-        ImageView i1=(ImageView) gridView.findViewById(R.id.imageView2);
+        TextView tv1=(TextView)gridView.findViewById(R.id.stprice);
+        ImageView i1=(ImageView) gridView.findViewById(R.id.im);
         CardView cv=(CardView) gridView.findViewById(R.id.cv);
 
         cv.setOnClickListener(new View.OnClickListener() {

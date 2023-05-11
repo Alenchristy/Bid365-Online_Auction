@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:id="@+id/lyt"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#4faffb">
+
+
+    <TableRow
+        android:id="@+id/tableRow18"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="20sp" />
+
+    </TableRow>
+
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+    <TableRow android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/tableRow1" android:gravity="center" android:layout_gravity="center">
+
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="240dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:ems="10"
+            android:hint="Type Here"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+            <requestFocus />
+
+        </EditText>
+
+        <Button
+            android:id="@+id/button1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="#FA8072"
+            android:text="Send" />
+
+    </TableRow>
+
+</LinearLayout>

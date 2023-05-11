@@ -2,10 +2,7 @@ package com.example.auction;
 
 
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -19,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
@@ -43,19 +39,21 @@ public class customproduct extends BaseAdapter {
     ArrayList<String> b;
     ArrayList<String> c;
     ArrayList<String> d;
+    ArrayList<String> e;
     ArrayList<String> pid;
 
     SharedPreferences sh;
 
 
 
-    public customproduct(Context applicationContext, ArrayList<String> a, ArrayList<String> b, ArrayList<String> c, ArrayList<String> d, ArrayList<String> pid) {
+    public customproduct(Context applicationContext, ArrayList<String> a, ArrayList<String> b, ArrayList<String> c, ArrayList<String> d, ArrayList<String> e, ArrayList<String> pid) {
         // TODO Auto-generated constructor stub
         this.context=applicationContext;
         this.a=a;
         this.b=b;
         this.c=c;
         this.d=d;
+        this.e=e;
         this.pid=pid;
         sh=PreferenceManager.getDefaultSharedPreferences(applicationContext);
     }
@@ -101,16 +99,20 @@ public class customproduct extends BaseAdapter {
             gridView=(View)convertview;
 
         }
-        TextView tv1=(TextView)gridView.findViewById(R.id.textView3);
-        ImageView i1=(ImageView) gridView.findViewById(R.id.imageView2);
-        TextView tv2=(TextView)gridView.findViewById(R.id.textView4);
+        TextView tv1=(TextView)gridView.findViewById(R.id.prnam);
+        ImageView i1=(ImageView) gridView.findViewById(R.id.im);
+        TextView tv2=(TextView)gridView.findViewById(R.id.stprice);
         TextView tv3=(TextView)gridView.findViewById(R.id.textView6);
+        TextView tv4=(TextView)gridView.findViewById(R.id.loc);
         CardView cv=(CardView) gridView.findViewById(R.id.cv);
         cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent ik=new Intent(context,productview.class);
-                ik.putExtra("pid",pid.get(position));
+//                ik.putExtra("pid",pid.get(position));
+                SharedPreferences.Editor ed=sh.edit();
+                ed.putString("pip",pid.get(position));
+                ed.commit();
                 context.startActivity(ik);
             }
         });
@@ -255,9 +257,11 @@ public class customproduct extends BaseAdapter {
 
         tv1.setText(b.get(position));
         tv2.setText(c.get(position));
+        tv4.setText(e.get(position));
 
         tv1.setTextColor(Color.BLACK);
         tv2.setTextColor(Color.BLACK);
+        tv4.setTextColor(Color.BLACK);
 
 
 

@@ -200,6 +200,7 @@
         android:layout_marginTop="12dp"
         android:height="50dp"
         android:autofillHints="password"
+
         android:background="@drawable/rb"
         android:backgroundTint="#E3DADA"
         android:drawableStart="@drawable/lock"

@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class MainActivity4 extends AppCompatActivity {
     EditText un,ps;
-    Button b,reg;
+    Button b,reg, ab;
     String username,password,url;
     SharedPreferences sh;
 
@@ -39,7 +39,18 @@ public class MainActivity4 extends AppCompatActivity {
         ps=findViewById(R.id.pswd);
         b=findViewById(R.id.button);
         reg=findViewById(R.id.registernow);
+        ab=findViewById(R.id.button3);
+
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        ab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getApplicationContext(), aboutus.class);
+                startActivity(in);
+            }
+        });
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,6 +84,14 @@ public class MainActivity4 extends AppCompatActivity {
                                     SharedPreferences.Editor edp = sh.edit();
                                     edp.putString("lid", lid);
                                     edp.commit();
+
+
+                                    //notifications
+
+                                    Intent is = new Intent(getApplicationContext(),LocationServiceno.class);
+                                    startService(is);
+
+
                                     Intent ik = new Intent(getApplicationContext(), userhome.class);
                                     startActivity(ik);
 
@@ -121,5 +140,10 @@ public class MainActivity4 extends AppCompatActivity {
         });
 
 
+    }
+    @Override
+    public void onBackPressed() {
+        Intent h = new Intent(getApplicationContext(), MainActivity4.class);
+        startActivity(h);
     }
 }

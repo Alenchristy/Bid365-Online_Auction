@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -42,6 +43,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class updateproduct extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -56,7 +58,8 @@ public class updateproduct extends AppCompatActivity implements AdapterView.OnIt
     String fileName = "", path = "";
     private static final int FILE_SELECT_CODE = 0;
     Button btn1, btn2;
-    EditText name1, details1, price1, place1, date1, tm1, image1;
+    EditText name1, details1, price1, place1, image1;
+    TextView date1,tm1;
 
     int pos;
     String cd;
@@ -86,7 +89,7 @@ public class updateproduct extends AppCompatActivity implements AdapterView.OnIt
         tm1 = findViewById(R.id.tim1);
         btn1 = findViewById(R.id.bt1);
         btn2 = findViewById(R.id.bt2);
-        date1 = (EditText) findViewById(R.id.date2);
+        date1 = findViewById(R.id.date2);
 
 
 
@@ -119,9 +122,9 @@ public class updateproduct extends AppCompatActivity implements AdapterView.OnIt
         tm1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Calendar c = Calendar.getInstance();
-                hour = c.get(Calendar.HOUR_OF_DAY);
-                minute = c.get(Calendar.MINUTE);
+                final Calendar calendar = Calendar.getInstance();
+                int hour = calendar.get(Calendar.HOUR_OF_DAY);
+                int minute = calendar.get(Calendar.MINUTE);
 
                 int limitHourStart = 8;
                 int limitMinuteStart = 0;
@@ -131,17 +134,31 @@ public class updateproduct extends AppCompatActivity implements AdapterView.OnIt
                 TimePickerDialog timePickerDialog = new TimePickerDialog(updateproduct.this,
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
-                            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                                hour = selectedHour;
-                                minute = selectedMinute;
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-//                                Toast.makeText(updateproduct.this, "Selected time is " + hour + ":" + minute, Toast.LENGTH_SHORT).show();
-                                tm1.setText(String.format("%d:%d", hour, minute));
+                                String am_pm = "";
+                                int hour = hourOfDay;
+                                if(hour >= 12) {
+                                    hour = hour - 12;
+                                    am_pm = "PM";
+                                } else {
+                                    am_pm = "AM";
+                                }
+                                if(hour == 0) {
+                                    hour = 12;
+                                }
+
+                                String formattedTime = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute, am_pm);
+                                tm1.setText(formattedTime);
+
+
+//                                tm.setText(String.format("%d:%d", hour, minute, am_pm));
                             }
-                        }, hour, minute, true);
+                        }, hour, minute, false);
                 timePickerDialog.show();
             }
         });
+
 
 
         url1 = "http://" + sh.getString("ip", "") + ":5000/updateview";

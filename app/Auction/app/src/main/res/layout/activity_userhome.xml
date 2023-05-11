@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back09"
+    android:background="@color/blue"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -24,63 +24,62 @@
             android:orientation="vertical"
             android:scrollbars="vertical">
 
+<!--            <TableRow-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:background="@color/white">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageView"-->
+<!--                    android:layout_width="37dp"-->
+<!--                    android:layout_height="29dp"-->
+<!--                    android:layout_marginLeft="105dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    app:srcCompat="@drawable/auction" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textView2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="47dp"-->
+<!--                    android:layout_marginLeft="11dp"-->
+
+<!--                    android:gravity="center"-->
+<!--                    android:text="Bid 365"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textColor="#C767E10B"-->
+<!--                    android:textSize="29dp"-->
+<!--                    android:textStyle="bold|italic" />-->
+
+
+<!--            </TableRow>-->
+
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_marginTop="10dp"
+                android:orientation="vertical"
                 android:layout_gravity="center"
-                android:background="@color/white">
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="37dp"
-                    android:layout_height="29dp"
-                    android:layout_marginLeft="105dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/auction" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="47dp"
-                    android:layout_marginLeft="11dp"
-
-                    android:gravity="center"
-                    android:text="Bid 365"
-                    android:textAlignment="center"
-                    android:textColor="#C767E10B"
-                    android:textSize="29dp"
-                    android:textStyle="bold|italic" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
                 <SearchView
                     android:id="@+id/sv"
-                    android:layout_width="273dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
                     android:background="@drawable/rb"
                     android:backgroundTint="#B1A9A9"
                     android:queryHint="search products" />
 
-
-
             </TableRow>
-
-
-
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="1dp"
                 android:orientation="vertical">
 
@@ -92,14 +91,15 @@
 
                     android:background="#F6F2F2"
                     android:backgroundTint="#F3EFEF"
+
                     android:textColor="@color/black"
                     android:textStyle="italic"
-                    android:text="Find Your Categories" />
+                    android:text=" Find Your Categories Here ↓" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="135dp"
+                android:layout_height="114dp"
                 android:orientation="vertical">
 
                 <ListView
@@ -111,7 +111,7 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="2dp">
 
 
                 <GridView
@@ -129,7 +129,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="65dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

@@ -10,6 +10,10 @@ urlpatterns = [
     path('cat',views.cat,name='cat'),
     path('adcat',views.adcat,name='adcat'),
     path('adnewcat',views.adnewcat,name='adnewcat'),
+    path('contract/<int:id>',views.contract,name='contract'),
+
+    
+    
     
     # path('viewcat',views.viewcat,name='viewcat'),
     path('upcat/<int:id>',views.upcat,name='upcat'),
@@ -23,6 +27,61 @@ urlpatterns = [
     path('viewpro',views.viewpro,name='viewpro'),
 
     path('removepro<int:id>',views.removepro,name='removepro'),
+
+    path('removeproduct',views.removeproduct,name='removeproduct'),
+
+    path('chats',views.chats,name='chats'),
+
+    path('view_message2',views.view_message2,name='view_message2'),
+
+    path('viewchats',views.viewchats,name='viewchats'),
+
+    path('regauction',views.regauction,name='regauction'),
+
+    path('regauction1',views.regauction1,name='regauction1'),
+
+    path('checkservice',views.checkservice,name='checkservice'),
+
+    path('regauction2',views.regauction2,name='regauction2'),
+
+    path('prod',views.prod,name='prod'),
+
+    path('insertbid',views.insertbid,name='insertbid'),
+
+    path('view_auction_data',views.view_auction_data,name='view_auction_data'),
+
+    path('dattim',views.dattim,name='dattim'),
+
+    path('soldproduct',views.soldproduct,name='soldproduct'),
+
+    path('updatebid',views.updatebid,name='updatebid'),
+
+    path('rejectbid',views.rejectbid,name='rejectbid'),
+
+    path('name',views.name,name='name'),
+
+    path('feed',views.feed,name='feed'),
+
+    path('auction2',views.auction2,name='auction2'),
+
+    path('auction1',views.auction1,name='auction1'),
+
+    path('earnings',views.earnings,name='earnings'),
+
+    path('paytm',views.paytm,name='paytm'),
+
+    
+
+
+
+
+
+
+
+
+
+
+
 
     
 
@@ -66,6 +125,20 @@ urlpatterns = [
     path('viewcatprodct1',views.viewcatprodct1,name='viewcatprodct1'),
 
     path('viewprodct2',views.viewprodct2,name='viewprodct2'),
+
+    path('payment',views.payment,name='payment'),
+
+    path('wonproduct',views.wonproduct,name='wonproduct'),
+    path('ratng',views.ratng,name='ratng'),
+
+    path('allrating',views.allrating,name='allrating'),
+
+    path('feedb',views.feedb,name='feedb'),
+    
+    
+    # path('rateview',views.rateview,name='rateview'),
+
+    
 
 
    
